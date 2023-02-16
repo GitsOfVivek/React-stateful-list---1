@@ -28,20 +28,14 @@ const App = () => {
 				<option value={'2021'}>2021</option>
 				<option value={'2022'}>2022</option>
 			</select>
-			<div id='"selected-year'>
-				{!year ? (
-					'No year selected'
-				) : (
-					<div>
-						Selected year-{year}
-						<ul>
-							{data[year].map(el => (
-								<li>{el}</li>
-							))}
-						</ul>
-					</div>
-				)}
+			<div id="selected-year">
+				{!year ? 'No year selected' : <div>Selected year-{year}</div>}
 			</div>
+			<ul>
+				{data[year]?.map(el => (
+					<li>{el}</li>
+				))}
+			</ul>
 		</div>
 	);
 };
